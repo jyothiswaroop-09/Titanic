@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titanic Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+  <div class="login">
+    <h1>Titanic Prediction</h1>
+
+    <!-- Input form -->
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <input type="number" name="pclass" placeholder="pclass" required /><br>
+      <input type="text" name="sex" placeholder="sex" required /><br>
+      <input type="number" name="age" placeholder="age" required /><br>
+      <input type="number" name="sibsp" placeholder="sibsp" required /><br>
+      <input type="number" name="parch" placeholder="parch" required /><br>
+      <input type="number" step="any" name="fare" placeholder="fare" required /><br>
+      <input type="text" name="who" placeholder="who" required /><br>
+      <input type="text" name="adult_male" placeholder="adult_male" required /><br>
+      <input type="text" name="embark_town" placeholder="embark_town" required /><br>
+      <input type="text" name="alone" placeholder="alone" required /><br>
+
+      <button type="submit">Predict</button>
+    </form>
+
+   <!-- Prediction Result -->
+{% if result is not none %}
+  {% if result == 1 %}
+    <h2 id="prediction-result" class="survived">✅ Passenger Survived</h2>
+  {% elif result == 0 %}
+    <h2 id="prediction-result" class="not-survived">❌ Passenger Did Not Survive</h2>
+  {% else %}
+    <h2 id="prediction-result">Result: {{ result }}</h2>
+  {% endif %}
+{% endif %}
