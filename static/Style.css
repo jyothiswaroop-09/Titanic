@@ -1,0 +1,103 @@
+/* Full-screen background */
+body {
+    background-image: url("/static/images/bg.jpg");  /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f3f7fb;
+}
+
+
+/* Main login box */
+.login {
+    background-color: rgba(135, 197, 224, 0.6);
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: #fff;
+}
+
+/* Title */
+.login h1 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #1a1b4b;
+    font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+select {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: rgba(94, 195, 235, 0.3);
+    color: black;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    font-size: 16px;
+    backdrop-filter: blur(4px);
+    transition: border-color 0.3s ease;
+}
+
+input::placeholder {
+    color: black;
+}
+
+/* Highlight on focus */
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Button */
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #a6c6f6;
+    background-color: #0b5787;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#prediction-result {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Green for survived */
+.survived {
+  color: white;
+  background-color: #28a745; /* Bootstrap green */
+}
+
+/* Red for not survived */
+.not-survived {
+  color: white;
+  background-color: #dc3545; /* Bootstrap red */
+}
